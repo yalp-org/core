@@ -1,0 +1,11 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "interface-name": [true, "never-prefix"],
+    "max-classes-per-file": [true, 5, "exclude-class-expressions"],
+    "no-angle-bracket-type-assertion": false
+  },
+  "rulesDirectory": []
+}

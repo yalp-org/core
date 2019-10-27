@@ -1,0 +1,37 @@
+{
+  "name": "@yalp/core",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "dev": "npm run clean && tsc",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "engines": {
+    "node": ">=10.16.1"
+  },
+  "author": "Remigiusz Ambroziak @reod",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "24.0.19",
+    "@types/node": "12.11.1",
+    "husky": "^3.0.9",
+    "prettier": "1.18.2",
+    "ts-jest": "24.1.0",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "3.6.4"
+  },
+  "dependencies": {
+    "commander": "3.0.2",
+    "jest": "24.9.0",
+    "js-yaml": "3.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
