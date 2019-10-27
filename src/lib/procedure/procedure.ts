@@ -11,7 +11,7 @@ export type ProcedureConfig = SimpleProcedureConfig | ComplexProcedureConfig;
 
 export interface Procedure {
   name: string;
-  params: object;
+  params?: object;
   procedureFunction: ProcedureFunction;
 }
 

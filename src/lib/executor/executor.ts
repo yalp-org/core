@@ -34,28 +34,13 @@ export interface ExecutorParams {
   strategy: ExecutionStrategy;
 }
 
-let sampleplan = {
-  version: '0.0.1',
-  execute: [
-    {
-      directories: ['test-a', 'test-b'],
-      procedures: [
-        'git-status',
-        { 'change-dependency': { from: 'adep', to: 'bdep' } },
-      ],
-    },
-    {
-      directories: ['mocks'],
-      procedures: [{ 'exec-command': { command: 'cat ${path}/foo.txt' } }],
-    },
-  ],
-};
-
 const execute = async (params: ExecutorParams): Promise<void> => {
   const {
     strategy,
     plan: { execute: executionPhases },
   } = params;
+
+  const currentWorkingDirecory = process.cwd();
 
   for (const phase of executionPhases) {
     const { directories, procedures } = phase;
@@ -66,6 +51,9 @@ const execute = async (params: ExecutorParams): Promise<void> => {
         executionContext: Object.freeze({ path: dir }),
         originalParams: {},
       };
+
+      process.chdir(dir);
+      console.log(`entering ${dir}`)
 
       for (let i = 0; i < procedures.length; i++) {
         const procedure = procedures[i];
@@ -105,4 +93,7 @@ const execute = async (params: ExecutorParams): Promise<void> => {
       }
     }
   }
+
+  process.chdir(currentWorkingDirecory);
+  console.log(`back in ${currentWorkingDirecory}`)
 };

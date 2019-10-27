@@ -26,6 +26,7 @@
     "typescript": "3.6.4"
   },
   "dependencies": {
+    "@yalp/procedures": "file:../procedures",
     "commander": "3.0.2",
     "jest": "24.9.0",
     "js-yaml": "3.13.1"
