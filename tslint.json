@@ -5,7 +5,8 @@
   "rules": {
     "interface-name": [true, "never-prefix"],
     "max-classes-per-file": [true, 5, "exclude-class-expressions"],
-    "no-angle-bracket-type-assertion": false
+    "no-angle-bracket-type-assertion": false,
+    "object-literal-sort-keys": false
   },
   "rulesDirectory": []
 }
